@@ -14,21 +14,35 @@
 
     <TextView
         android:id="@+id/splash_text_view"
-        android:layout_above="@+id/country_select_container"
+        android:layout_above="@+id/splash_text_view2"
+        android:textColor="@color/colorPrimary"
+        android:text="ReciMe"
+        android:textSize="40sp"
         android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/splash_text_view2"
+        android:layout_above="@+id/country_select_container"
+        android:textColor="@color/colorAccent"
+        android:text="Find popular Recipes around the world!"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
         android:id="@+id/country_select_container"
         android:layout_centerInParent="true"
         android:orientation="vertical"
         android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
         android:layout_height="wrap_content">
 
         <AutoCompleteTextView
             android:hint="Enter a Country Name"
-            android:layout_width="fill_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:id="@+id/editText"
             android:inputType="textCapWords" />
@@ -37,10 +51,12 @@
             android:layout_gravity="center"
             android:id="@+id/go_button"
             android:text="Find"
+            android:layout_toRightOf="@id/editText"
+            android:gravity="center"
             android:onClick="sendMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

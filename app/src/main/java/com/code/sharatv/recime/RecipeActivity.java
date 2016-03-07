@@ -44,7 +44,7 @@ public class RecipeActivity extends AppCompatActivity {
         String json_string = intent.getStringExtra(RecipeListActivity.RECIPE_OBJ);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ingredientsList = (ListView) findViewById(R.id.ingredients);
-        
+
         JSONObject recipe = null;
 
         imageView = (ImageView) findViewById(R.id.image);

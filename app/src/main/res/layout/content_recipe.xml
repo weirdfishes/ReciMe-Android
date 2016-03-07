@@ -26,11 +26,12 @@
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
             android:paddingEnd="0dp"
-            android:id="@+id/recipeName"/>
+            android:id="@+id/recipeName"
+            android:textColor="@color/colorPrimary"/>
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="120dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/recipeName"
             android:id="@+id/image"
             android:contentDescription="image"/>
@@ -42,13 +43,15 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageContainer"
             android:text="Ingredients"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:id="@+id/ingredientsText"/>
+            android:id="@+id/ingredientsText"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/colorAccent"/>
         <ListView android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:id="@+id/ingredients"
@@ -56,14 +59,16 @@
         </ListView>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ingredients"
             android:text="Steps"
             android:textStyle="bold"
             android:paddingTop="20dp"
             android:textSize="20sp"
-            android:id="@+id/stepsTextView"/>
+            android:id="@+id/stepsTextView"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/colorAccent"/>
 
         <ScrollView
             android:layout_width="wrap_content"
