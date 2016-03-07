@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -42,7 +44,7 @@ public class RecipeActivity extends AppCompatActivity {
         String json_string = intent.getStringExtra(RecipeListActivity.RECIPE_OBJ);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ingredientsList = (ListView) findViewById(R.id.ingredients);
-
+        
         JSONObject recipe = null;
 
         imageView = (ImageView) findViewById(R.id.image);
@@ -79,7 +81,6 @@ public class RecipeActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public String getSteps(JSONArray arr) {

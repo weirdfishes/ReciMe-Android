@@ -2,6 +2,7 @@ package com.code.sharatv.recime;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -44,13 +46,8 @@ public class RecipeListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String countryname = intent.getStringExtra(MainActivity.COUNTRY_NAME);
 
-
         toolbar.setTitle(countryname);
-
-
         setSupportActionBar(toolbar);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         relativeLayout = (RelativeLayout) findViewById(R.id.content);
