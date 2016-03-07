@@ -34,17 +34,24 @@ public class RecipeListActivity extends AppCompatActivity {
     String result = "";
     ListView listView;
 
+    public static final String RECIPE_OBJ = "Recime";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Intent intent = getIntent();
+        String countryname = intent.getStringExtra(MainActivity.COUNTRY_NAME);
+
+
+        toolbar.setTitle(countryname);
+
+
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Intent intent = getIntent();
-        String countryname = intent.getStringExtra(MainActivity.COUNTRY_NAME);
 
         relativeLayout = (RelativeLayout) findViewById(R.id.content);
         listView = (ListView) findViewById(R.id.listView);
@@ -102,7 +109,7 @@ public class RecipeListActivity extends AppCompatActivity {
     public void handleUI(String result) {
 
         try{
-            JSONArray jsonArray = new JSONArray(result);
+            final JSONArray jsonArray = new JSONArray(result);
 
             String[] recipenames = new String[jsonArray.length()];
             for(int i = 0; i < jsonArray.length(); i++) {
@@ -138,6 +145,19 @@ public class RecipeListActivity extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> parent, View view,
                                         int position, long id) {
 
+
+                    Intent intent = new Intent(RecipeListActivity.this, RecipeActivity.class);
+
+                    try {
+
+                        intent.putExtra(RECIPE_OBJ, jsonArray.getJSONObject(position).toString());
+                        startActivity(intent);
+
+                    }catch(JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    /*
                     // ListView Clicked item index
                     int itemPosition = position;
 
@@ -148,6 +168,7 @@ public class RecipeListActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),
                             "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)
                             .show();
+                    */
 
                 }
 
